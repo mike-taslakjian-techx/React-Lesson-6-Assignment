@@ -3,6 +3,7 @@ import { Form } from "./components/Form/Form";
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import { Layout } from "./assets/Layout";
 import { FriendsList } from "./components/FriendsList/FriendsList";
+import { ErrorPage } from "./components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
     },
     {
         path: "*",
-        element: <p>ERROR</p>
+        element: <ErrorPage />
     }
 ]);
 
