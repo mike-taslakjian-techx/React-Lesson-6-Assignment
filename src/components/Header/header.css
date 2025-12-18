@@ -1,0 +1,72 @@
+header {
+    align-items: center;
+    background-color: var(--white);
+    border-bottom: 2px solid var(--light-gray);
+    display: flex;
+    height: 75px;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+.header-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 75%;
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+.logo svg {
+    background-color: var(--blue);
+    border-radius: 6px;
+    color: var(--white);
+    height: 35px;
+    padding: 7px;
+    width: 35px;
+}
+
+.logo p {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.login-text {
+    color: var(--gray);
+}
+
+.log-out {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.welcome-user p:last-of-type {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.welcome-user p:first-of-type {
+    color: var(--gray);
+    text-align: right;
+}
+
+.log-out button {
+    background-color: var(--white);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 2px;
+    height: 25px;
+    padding: 5px 8px;
+}
+
+.login-text {
+    color: var(--gray);
+}
