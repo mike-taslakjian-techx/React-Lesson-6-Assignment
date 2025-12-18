@@ -2,13 +2,19 @@ import { useContext } from "react";
 import "./dashboard.css";
 import { UserContext } from "../../context/UserContext";
 import { getDay, getMonth, getWeekday, getYear } from "../../utils";
+import { useNavigate } from "react-router";
 
 const Dashboard = () => {
     const { currentUser } = useContext(UserContext);
     const { username, userEmail } = currentUser;
+    const navigate = useNavigate();
+
+    const checkFriends = () => {
+        navigate("/friends");
+    }
 
     return (
-        <section>
+        <section className="dashboard">
             <div className="welcome-message">
                 <h1>Welcome Back, {username}!</h1>
                 <p>Today is {getWeekday()}, {getMonth()} {getDay()}, {getYear()}</p>
@@ -86,6 +92,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
+            <button className="friends-btn" onClick={checkFriends}>Friends</button>
         </section>
     );
 };

@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { Form } from './components/Form/Form';
-import { Header } from './components/Header/Header';
 import { UserContext } from './context/UserContext';
-import { Dashboard } from './components/Dashboard/Dashboard';
+import { RouterProvider } from 'react-router';
+import { router } from './router';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,10 +42,7 @@ function App() {
   return (
     <>
     <UserContext.Provider value={{ isLoggedIn, currentUser, handleLogin, handleLogout}}>
-      <Header />
-      <main>
-        {isLoggedIn ? <Dashboard /> : <Form />}
-      </main>
+      <RouterProvider router={router} />
     </UserContext.Provider>
     </>
   )

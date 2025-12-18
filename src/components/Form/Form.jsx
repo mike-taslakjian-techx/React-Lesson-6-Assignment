@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import "./form.css";
 import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router";
 
 const Form = () => {
-    const { isLoggedIn, currentUser, handleLogin, handleLogout } = useContext(UserContext);
+    const { handleLogin } = useContext(UserContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const isFormValid = name.trim().length > 0 && email.trim().length > 0;
+    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -14,6 +16,7 @@ const Form = () => {
         const userEmail = email;
 
         handleLogin({ username, userEmail });
+        navigate("/dashboard");
     };
 
     const handleEmail = (e) => {

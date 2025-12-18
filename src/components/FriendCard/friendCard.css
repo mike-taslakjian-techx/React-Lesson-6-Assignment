@@ -1,0 +1,15 @@
+.friend-card {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.bold {
+    font-weight: 800;
+}

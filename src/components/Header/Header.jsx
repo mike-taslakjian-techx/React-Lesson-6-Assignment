@@ -1,9 +1,16 @@
 import { useContext } from "react";
 import "./header.css";
 import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router";
 
 const Header = () => {
     const { isLoggedIn, currentUser, handleLogout } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const logout = () => {
+        handleLogout()
+        navigate("/");
+    }
 
     return (
         <header>
@@ -26,7 +33,7 @@ const Header = () => {
                                 <p>Welcome back</p>
                                 <p>{currentUser.username}</p>
                             </div>
-                            <button onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+                            <button onClick={logout}><i className="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
                         </div>
                     )
                     : (<p className="login-text">Please log in to access your dashboard</p>)
